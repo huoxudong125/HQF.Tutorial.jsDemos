@@ -1,0 +1,29 @@
+<html>
+<header>
+<script type="text/javascript" src="./ImageTransform.js"></script>
+
+</header>
+
+<body>
+    <h3>EXIF Orientation codes:</h3>
+    <img src="../../img/EXIF_Orientations.jpg"
+    />
+
+    <h3>Check image orientation:</h3>
+    <input id="file-input" type="file" accept="image/*" />
+
+    <script type="text/javascript">
+        var fileInput = document.getElementById("file-input");
+
+        fileInput.onchange = function (event) {
+            var file = event.target.files[0];
+
+            ImageTransform.getOrientation(file, function (orientation) {
+                //alert(orientation);
+                console.info("orientation:"+orientation);
+            });
+        }
+    </script>
+</body>
+
+</html>
