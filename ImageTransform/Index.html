@@ -1,27 +1,61 @@
 <html>
 <header>
-<script type="text/javascript" src="./ImageTransform.js"></script>
-
+    <script src="http://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+    <script type="text/javascript" src="./ImageTransform.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/Common.css" media="screen" />
 </header>
 
 <body>
     <h3>EXIF Orientation codes:</h3>
-    <img src="../../img/EXIF_Orientations.jpg"
-    />
+    <img src="../../img/EXIF_Orientations.jpg" />
 
     <h3>Check image orientation:</h3>
     <input id="file-input" type="file" accept="image/*" />
+
+    <h3>Original image </h3>
+    <img id="image-original" src="" />
+
+    <h3>Reset image:</h3>
+    <img id="image-reset" src="" />
+
 
     <script type="text/javascript">
         var fileInput = document.getElementById("file-input");
 
         fileInput.onchange = function (event) {
             var file = event.target.files[0];
+            var reader = new FileReader();
 
-            ImageTransform.getOrientation(file, function (orientation) {
+            var imgtag = document.getElementById("image-original");
+            imgtag.title = file.name;
+
+            reader.onload = function (event) {
+                imgtag.src = event.target.result;
+                 ImageTransform.getOrientation(file, function (orientation) {
                 //alert(orientation);
-                console.info("orientation:"+orientation);
+                console.info("orientation:" + orientation);
+
+
+
+                var resetImgtag = document.getElementById("image-reset");
+                if (orientation > 1) {
+                    ImageTransform.resetOrientation(imgtag.src, orientation, function (data) {
+
+
+                        resetImgtag.src = data;
+                    });
+                } else {
+                    resetImgtag.src = imgtag.src;
+                }
+
             });
+            };
+
+            reader.readAsDataURL(file);
+
+
+           
+
         }
     </script>
 </body>
