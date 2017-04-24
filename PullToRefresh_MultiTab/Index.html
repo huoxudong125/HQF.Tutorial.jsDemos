@@ -1,0 +1,233 @@
+<head>
+        <link rel="stylesheet" type="text/css" href="../css/Common.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/Tab.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/pulltorefresh_multiTab.css" media="screen" />
+    <script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+    <script type="text/javascript" src="../Lib/iScroll/iscroll-probe.js"></script>
+    <script type="text/javascript" src="pulltoRefresh_MultiTab.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1080,user-scalable=no, target-densitydpi=device-dpi">
+    <script>
+        function bindTabEvents() {
+            $(".tabHeader").on("click", function () {
+                if ($(this).hasClass("tabActivity")) return;
+                $(this).addClass("tabActivity").siblings().removeClass("tabActivity");
+                $(".tabContent").eq($(this).index()).show().siblings(".tabContent").hide();
+
+            })
+        };
+
+        $(document).ready(
+            function () {
+                bindTabEvents();
+            }
+        );
+    </script>
+</head>
+
+<body>
+
+    <div class="tabControl">
+        <div class="tabHeaderPanel">
+            <div id="newWorks" class="tabHeader tabActivity"><span>最新投稿</span></div>
+            <div id="hotWorks" class="tabHeader"><span>热门作品</span></div>
+            <div id="myStudio" class="tabHeader"><span>魔法小店</span></div>
+        </div>
+
+        <div class="tabContentPanel">
+            <div id="newWorksTab" class="LatestPosts  tabContent" style="display:block;">
+                <div id="scroller">
+                    <div id="pullDown" class="ub ub-pc c-gra">
+                        <div class="pullDownIcon"></div>
+                        <div class="pullDownLabel">下拉刷新</div>
+                    </div>
+                    <ul id="add">
+                        <li>最新 row 1</li>
+                        <li>最新 row 2</li>
+                        <li>最新 row 3</li>
+                        <li>最新 row 4</li>
+                        <li>最新 row 5</li>
+                        <li>最新 row 6</li>
+                        <li>最新 row 7</li>
+                        <li>最新 row 8</li>
+                        <li>最新 row 9</li>
+                        <li>最新 row 10</li>
+                        <li>最新 row 11</li>
+                        <li>最新 row 12</li>
+                        <li>最新 row 13</li>
+                        <li>最新 row 14</li>
+                        <li>最新 row 15</li>
+                        <li>最新 row 16</li>
+                        <li>最新 row 17</li>
+                        <li>最新 row 18</li>
+                        <li>最新 row 19</li>
+                        <li>最新 row 20</li>
+                        <li>最新 row 21</li>
+                        <li>最新 row 22</li>
+                        <li>最新 row 23</li>
+                        <li>最新 row 24</li>
+                        <li>最新 row 25</li>
+                        <li>最新 row 26</li>
+                        <li>最新 row 27</li>
+                        <li>最新 row 28</li>
+                        <li>最新 row 29</li>
+                        <li>最新 row 30</li>
+                        <li>最新 row 31</li>
+                        <li>最新 row 32</li>
+                        <li>最新 row 33</li>
+                        <li>最新 row 34</li>
+                        <li>最新 row 35</li>
+                        <li>最新 row 36</li>
+                        <li>最新 row 37</li>
+                        <li>最新 row 38</li>
+                        <li>最新 row 39</li>
+                        <li>最新 row 40</li>
+                        <li>最新 row 41</li>
+                        <li>最新 row 42</li>
+                        <li>最新 row 43</li>
+                        <li>最新 row 44</li>
+                        <li>最新 row 45</li>
+                        <li>最新 row 46</li>
+                        <li>最新 row 47</li>
+                        <li>最新 row 48</li>
+                        <li>最新 row 49</li>
+                        <li>最新 row 50</li>
+                    </ul>
+                    <div id="pullUp" class="ub ub-pc c-gra">
+                        <div class="pullUpIcon"></div>
+                        <div class="pullUpLabel">上拉显示更多...</div>
+                    </div>
+                </div>
+            </div>
+            <div id="hotWorksTab" class="popularWorks tabContent" style="display:none;">
+                <div id="scroller">
+                    <div id="pullDown" class="ub ub-pc c-gra">
+                        <div class="pullDownIcon"></div>
+                        <div class="pullDownLabel">下拉刷新</div>
+                    </div>
+                    <ul id="add">
+                        <li>最热 row 1</li>
+                        <li>最热 row 2</li>
+                        <li>最热 row 3</li>
+                        <li>最热 row 4</li>
+                        <li>最热 row 5</li>
+                        <li>最热 row 6</li>
+                        <li>最热 row 7</li>
+                        <li>最热 row 8</li>
+                        <li>最热 row 9</li>
+                        <li>最热 row 10</li>
+                        <li>最热 row 11</li>
+                        <li>最热 row 12</li>
+                        <li>最热 row 13</li>
+                        <li>最热 row 14</li>
+                        <li>最热 row 15</li>
+                        <li>最热 row 16</li>
+                        <li>最热 row 17</li>
+                        <li>最热 row 18</li>
+                        <li>最热 row 19</li>
+                        <li>最热 row 20</li>
+                        <li>最热 row 21</li>
+                        <li>最热 row 22</li>
+                        <li>最热 row 23</li>
+                        <li>最热 row 24</li>
+                        <li>最热 row 25</li>
+                        <li>最热 row 26</li>
+                        <li>最热 row 27</li>
+                        <li>最热 row 28</li>
+                        <li>最热 row 29</li>
+                        <li>最热 row 30</li>
+                        <li>最热 row 31</li>
+                        <li>最热 row 32</li>
+                        <li>最热 row 33</li>
+                        <li>最热 row 34</li>
+                        <li>最热 row 35</li>
+                        <li>最热 row 36</li>
+                        <li>最热 row 37</li>
+                        <li>最热 row 38</li>
+                        <li>最热 row 39</li>
+                        <li>最热 row 40</li>
+                        <li>最热 row 41</li>
+                        <li>最热 row 42</li>
+                        <li>最热 row 43</li>
+                        <li>最热 row 44</li>
+                        <li>最热 row 45</li>
+                        <li>最热 row 46</li>
+                        <li>最热 row 47</li>
+                        <li>最热 row 48</li>
+                        <li>最热 row 49</li>
+                        <li>最热 row 50</li>
+                    </ul>
+                    <div id="pullUp" class="ub ub-pc c-gra">
+                        <div class="pullUpIcon"></div>
+                        <div class="pullUpLabel">上拉显示更多...</div>
+                    </div>
+                </div>
+            </div>
+            <div id="myStudioTab" class="myStudio tabContent" style="display:none;">
+                <div id="scroller">
+                    <div id="pullDown" class="ub ub-pc c-gra">
+                        <div class="pullDownIcon"></div>
+                        <div class="pullDownLabel">下拉刷新</div>
+                    </div>
+                    <ul id="add">
+                        <li>小店 row 1</li>
+                        <li>小店 row 2</li>
+                        <li>小店 row 3</li>
+                        <li>小店 row 4</li>
+                        <li>小店 row 5</li>
+                        <li>小店 row 6</li>
+                        <li>小店 row 7</li>
+                        <li>小店 row 8</li>
+                        <li>小店 row 9</li>
+                        <li>小店 row 10</li>
+                        <li>小店 row 11</li>
+                        <li>小店 row 12</li>
+                        <li>小店 row 13</li>
+                        <li>小店 row 14</li>
+                        <li>小店 row 15</li>
+                        <li>小店 row 16</li>
+                        <li>小店 row 17</li>
+                        <li>小店 row 18</li>
+                        <li>小店 row 19</li>
+                        <li>小店 row 20</li>
+                        <li>小店 row 21</li>
+                        <li>小店 row 22</li>
+                        <li>小店 row 23</li>
+                        <li>小店 row 24</li>
+                        <li>小店 row 25</li>
+                        <li>小店 row 26</li>
+                        <li>小店 row 27</li>
+                        <li>小店 row 28</li>
+                        <li>小店 row 29</li>
+                        <li>小店 row 30</li>
+                        <li>小店 row 31</li>
+                        <li>小店 row 32</li>
+                        <li>小店 row 33</li>
+                        <li>小店 row 34</li>
+                        <li>小店 row 35</li>
+                        <li>小店 row 36</li>
+                        <li>小店 row 37</li>
+                        <li>小店 row 38</li>
+                        <li>小店 row 39</li>
+                        <li>小店 row 40</li>
+                        <li>小店 row 41</li>
+                        <li>小店 row 42</li>
+                        <li>小店 row 43</li>
+                        <li>小店 row 44</li>
+                        <li>小店 row 45</li>
+                        <li>小店 row 46</li>
+                        <li>小店 row 47</li>
+                        <li>小店 row 48</li>
+                        <li>小店 row 49</li>
+                        <li>小店 row 50</li>
+                    </ul>
+                    <div id="pullUp" class="ub ub-pc c-gra">
+                        <div class="pullUpIcon"></div>
+                        <div class="pullUpLabel">上拉显示更多...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
