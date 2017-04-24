@@ -12,14 +12,17 @@
             $(".tabHeader").on("click", function () {
                 if ($(this).hasClass("tabActivity")) return;
                 $(this).addClass("tabActivity").siblings().removeClass("tabActivity");
-                $(".tabContent").eq($(this).index()).show().siblings(".tabContent").hide();
-
+                // $(".tabContent").eq($(this).index()).show().siblings(".tabContent").hide();
+               $(".tabContent").eq($(this).index()).css('z-index',"1").siblings(".tabContent").css("z-index","-1");
             })
         };
 
         $(document).ready(
             function () {
                 bindTabEvents();
+                loaded("#newWorksTab");
+                loaded("#hotWorksTab");
+                loaded("#myStudioTab");
             }
         );
     </script>
@@ -29,15 +32,15 @@
 
     <div class="tabControl">
         <div class="tabHeaderPanel">
-            <div id="newWorks" class="tabHeader tabActivity"><span>最新投稿</span></div>
+            <div id="newWorks" class="tabHeader"><span>最新投稿</span></div>
             <div id="hotWorks" class="tabHeader"><span>热门作品</span></div>
-            <div id="myStudio" class="tabHeader"><span>魔法小店</span></div>
+            <div id="myStudio" class="tabHeader tabActivity"><span>魔法小店</span></div>
         </div>
 
         <div class="tabContentPanel">
             <div id="newWorksTab" class="LatestPosts  tabContent" style="display:block;">
                 <div id="scroller">
-                    <div id="pullDown" class="ub ub-pc c-gra">
+                    <div id="pullDown" class="pullDown ub ub-pc c-gra">
                         <div class="pullDownIcon"></div>
                         <div class="pullDownLabel">下拉刷新</div>
                     </div>
@@ -93,15 +96,15 @@
                         <li>最新 row 49</li>
                         <li>最新 row 50</li>
                     </ul>
-                    <div id="pullUp" class="ub ub-pc c-gra">
+                    <div id="pullUp" class="pullUp ub ub-pc c-gra">
                         <div class="pullUpIcon"></div>
                         <div class="pullUpLabel">上拉显示更多...</div>
                     </div>
                 </div>
             </div>
-            <div id="hotWorksTab" class="popularWorks tabContent" style="display:none;">
+            <div id="hotWorksTab" class="popularWorks tabContent" style="display:block;">
                 <div id="scroller">
-                    <div id="pullDown" class="ub ub-pc c-gra">
+                    <div id="pullDown" class="pullDown ub ub-pc c-gra">
                         <div class="pullDownIcon"></div>
                         <div class="pullDownLabel">下拉刷新</div>
                     </div>
@@ -157,15 +160,15 @@
                         <li>最热 row 49</li>
                         <li>最热 row 50</li>
                     </ul>
-                    <div id="pullUp" class="ub ub-pc c-gra">
+                    <div id="pullUp" class="pullUp ub ub-pc c-gra">
                         <div class="pullUpIcon"></div>
                         <div class="pullUpLabel">上拉显示更多...</div>
                     </div>
                 </div>
             </div>
-            <div id="myStudioTab" class="myStudio tabContent" style="display:none;">
+            <div id="myStudioTab" class="myStudio tabContent" style="display:block;">
                 <div id="scroller">
-                    <div id="pullDown" class="ub ub-pc c-gra">
+                    <div id="pullDown" class="pullDown ub ub-pc c-gra">
                         <div class="pullDownIcon"></div>
                         <div class="pullDownLabel">下拉刷新</div>
                     </div>
@@ -221,7 +224,7 @@
                         <li>小店 row 49</li>
                         <li>小店 row 50</li>
                     </ul>
-                    <div id="pullUp" class="ub ub-pc c-gra">
+                    <div id="pullUp" class="pullUp ub ub-pc c-gra">
                         <div class="pullUpIcon"></div>
                         <div class="pullUpLabel">上拉显示更多...</div>
                     </div>

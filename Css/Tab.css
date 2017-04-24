@@ -45,10 +45,12 @@
 }
 
 .tabControl .tabContent {
-    position:absolute;
+    position: absolute;
     width: 100%;
     height: 100%;
     overflow: auto;
     box-sizing: border-box;
     margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
 }
