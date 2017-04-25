@@ -1,5 +1,5 @@
 <head>
-        <link rel="stylesheet" type="text/css" href="../css/Common.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/Common.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../css/Tab.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="../css/pulltorefresh_multiTab.css" media="screen" />
     <script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
@@ -13,16 +13,21 @@
                 if ($(this).hasClass("tabActivity")) return;
                 $(this).addClass("tabActivity").siblings().removeClass("tabActivity");
                 // $(".tabContent").eq($(this).index()).show().siblings(".tabContent").hide();
-               $(".tabContent").eq($(this).index()).css('z-index',"1").siblings(".tabContent").css("z-index","-1");
+                $(".tabContent").eq($(this).index()).css('z-index', "1").siblings(".tabContent").css("z-index",
+                    "-1");
             })
         };
 
         $(document).ready(
             function () {
                 bindTabEvents();
-                loaded("#newWorksTab");
-                loaded("#hotWorksTab");
-                loaded("#myStudioTab");
+
+                // var obj1 = new PullToRefreshMultiTab("#newWorksTab");
+                // //PullToRefreshMultiTab.loaded("#newWorksTab");
+                // var obj2 = new PullToRefreshMultiTab("#hotWorksTab");
+                // //PullToRefreshMultiTab.loaded("#hotWorksTab");
+                // var obj3 = new PullToRefreshMultiTab("#myStudioTab");
+                //PullToRefreshMultiTab.loaded("#myStudioTab");
             }
         );
     </script>
@@ -39,8 +44,8 @@
 
         <div class="tabContentPanel">
             <div id="newWorksTab" class="LatestPosts  tabContent" style="display:block;">
-                <div id="scroller">
-                    <div id="pullDown" class="pullDown ub ub-pc c-gra">
+                <div class="scroller">
+                    <div class="pullDown ub ub-pc c-gra">
                         <div class="pullDownIcon"></div>
                         <div class="pullDownLabel">下拉刷新</div>
                     </div>
@@ -75,36 +80,18 @@
                         <li>最新 row 28</li>
                         <li>最新 row 29</li>
                         <li>最新 row 30</li>
-                        <li>最新 row 31</li>
-                        <li>最新 row 32</li>
-                        <li>最新 row 33</li>
-                        <li>最新 row 34</li>
-                        <li>最新 row 35</li>
-                        <li>最新 row 36</li>
-                        <li>最新 row 37</li>
-                        <li>最新 row 38</li>
-                        <li>最新 row 39</li>
-                        <li>最新 row 40</li>
-                        <li>最新 row 41</li>
-                        <li>最新 row 42</li>
-                        <li>最新 row 43</li>
-                        <li>最新 row 44</li>
-                        <li>最新 row 45</li>
-                        <li>最新 row 46</li>
-                        <li>最新 row 47</li>
-                        <li>最新 row 48</li>
-                        <li>最新 row 49</li>
-                        <li>最新 row 50</li>
+
                     </ul>
-                    <div id="pullUp" class="pullUp ub ub-pc c-gra">
+                    <div class="pullUp ub ub-pc c-gra">
                         <div class="pullUpIcon"></div>
                         <div class="pullUpLabel">上拉显示更多...</div>
                     </div>
                 </div>
             </div>
+
             <div id="hotWorksTab" class="popularWorks tabContent" style="display:block;">
-                <div id="scroller">
-                    <div id="pullDown" class="pullDown ub ub-pc c-gra">
+                <div class="scroller">
+                    <div class="pullDown ub ub-pc c-gra">
                         <div class="pullDownIcon"></div>
                         <div class="pullDownLabel">下拉刷新</div>
                     </div>
@@ -139,36 +126,18 @@
                         <li>最热 row 28</li>
                         <li>最热 row 29</li>
                         <li>最热 row 30</li>
-                        <li>最热 row 31</li>
-                        <li>最热 row 32</li>
-                        <li>最热 row 33</li>
-                        <li>最热 row 34</li>
-                        <li>最热 row 35</li>
-                        <li>最热 row 36</li>
-                        <li>最热 row 37</li>
-                        <li>最热 row 38</li>
-                        <li>最热 row 39</li>
-                        <li>最热 row 40</li>
-                        <li>最热 row 41</li>
-                        <li>最热 row 42</li>
-                        <li>最热 row 43</li>
-                        <li>最热 row 44</li>
-                        <li>最热 row 45</li>
-                        <li>最热 row 46</li>
-                        <li>最热 row 47</li>
-                        <li>最热 row 48</li>
-                        <li>最热 row 49</li>
-                        <li>最热 row 50</li>
+
                     </ul>
-                    <div id="pullUp" class="pullUp ub ub-pc c-gra">
+                    <div class="pullUp ub ub-pc c-gra">
                         <div class="pullUpIcon"></div>
                         <div class="pullUpLabel">上拉显示更多...</div>
                     </div>
                 </div>
             </div>
+
             <div id="myStudioTab" class="myStudio tabContent" style="display:block;">
-                <div id="scroller">
-                    <div id="pullDown" class="pullDown ub ub-pc c-gra">
+                <div class="scroller">
+                    <div class="pullDown" class="pullDown ub ub-pc c-gra">
                         <div class="pullDownIcon"></div>
                         <div class="pullDownLabel">下拉刷新</div>
                     </div>
@@ -203,28 +172,9 @@
                         <li>小店 row 28</li>
                         <li>小店 row 29</li>
                         <li>小店 row 30</li>
-                        <li>小店 row 31</li>
-                        <li>小店 row 32</li>
-                        <li>小店 row 33</li>
-                        <li>小店 row 34</li>
-                        <li>小店 row 35</li>
-                        <li>小店 row 36</li>
-                        <li>小店 row 37</li>
-                        <li>小店 row 38</li>
-                        <li>小店 row 39</li>
-                        <li>小店 row 40</li>
-                        <li>小店 row 41</li>
-                        <li>小店 row 42</li>
-                        <li>小店 row 43</li>
-                        <li>小店 row 44</li>
-                        <li>小店 row 45</li>
-                        <li>小店 row 46</li>
-                        <li>小店 row 47</li>
-                        <li>小店 row 48</li>
-                        <li>小店 row 49</li>
-                        <li>小店 row 50</li>
+
                     </ul>
-                    <div id="pullUp" class="pullUp ub ub-pc c-gra">
+                    <div class="pullUp ub ub-pc c-gra">
                         <div class="pullUpIcon"></div>
                         <div class="pullUpLabel">上拉显示更多...</div>
                     </div>

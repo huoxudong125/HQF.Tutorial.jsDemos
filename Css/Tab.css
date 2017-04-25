@@ -17,15 +17,6 @@
     z-index: 99;
 }
 
-.tabControl .tabContentPanel {
-    width: 100%;
-}
-
-.tabControl .tabContentPanel {
-    width: 100%;
-    overflow-y: hidden;
-}
-
 .tabControl .tabHeaderPanel .tabActivity {
     border-bottom: 4px solid #FA9C14;
 }
@@ -39,18 +30,29 @@
     text-align: center;
 }
 
-.tabControl .tabHeader span {
+.tabControl .tabHeaderPanel .tabHeader span {
     font-size: 40px;
     color: #5F646E;
 }
 
-.tabControl .tabContent {
+.tabControl .tabContentPanel {
     position: absolute;
+    margin-top: 10px;
+    padding-bottom:120px;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+
+.tabControl .tabContentPanel .tabContent {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     width: 100%;
     height: 100%;
     overflow: auto;
     box-sizing: border-box;
-    margin-top: 10px;
-    margin-bottom: 20px;
     background-color: #fff;
+   
 }
