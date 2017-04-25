@@ -9,7 +9,8 @@ function PullToRefreshMultiTab(tabContentTag) {
     this.downCount = 0;
     this.upCount = 0;
     this.loadingStep = 0; //加载状态0默认，1显示加载状态，2执行加载数据，只有当为0时才能再次加载，这是防止过快拉动刷新  
-
+   
+   var me=this;
 
 
     this.pullDownAction = function (tabContentTag) { //下拉事件  
@@ -18,17 +19,17 @@ function PullToRefreshMultiTab(tabContentTag) {
             el = $(tabContentTag + ' ul');
             for (i = 0; i < 3; i++) {
                 li = $("<li></li>");
-                this.downCount++;
-                li.text('new Add ' + this.downCount + " ！");
+                me.downCount++;
+                li.text('下拉 new Add ' + me.downCount + " ！");
                 el.prepend(li);
             }
-            this.pullDownEl.removeClass('loading');
-            this.pullDownL.html('下拉显示更多...');
-            this.pullDownEl['class'] = this.pullDownEl.attr('class');
-            this.pullDownEl.attr('class', '').hide();
-            this.myScroll.refresh();
-            this.loadingStep = 0;
-        }, 1000); //1秒  
+            me.pullDownEl.removeClass('loading');
+            me.pullDownL.html('下拉显示更多...');
+            me.pullDownEl['class'] = me.pullDownEl.attr('class');
+            me.pullDownEl.attr('class', '').hide();
+            me.myScroll.refresh();
+            me.loadingStep = 0;
+        }, 500); //500毫秒  
     }
 
     this.pullUpAction = function (tabContentTag) { //上拉事件  
@@ -37,20 +38,23 @@ function PullToRefreshMultiTab(tabContentTag) {
             el = $(tabContentTag + ' ul');
             for (i = 0; i < 3; i++) {
                 li = $("<li></li>");
-                this.upCount++;
-                li.text('new Add ' + this.upCount + " ！");
+                me.upCount++;
+                li.text('上拉 new Add ' + me.upCount + " ！");
                 el.append(li);
             }
-            this.pullUpEl.removeClass('loading');
-            this.pullUpL.html('上拉显示更多...');
-            this.pullUpEl['class'] = this.pullUpEl.attr('class');
-            this.pullUpEl.attr('class', '').hide();
-            this.myScroll.refresh();
-            this.loadingStep = 0;
-        }, 1000);
+            me.pullUpEl.removeClass('loading');
+            me.pullUpL.html('上拉显示更多...');
+            me.pullUpEl['class'] = me.pullUpEl.attr('class');
+            me.pullUpEl.attr('class', '').hide();
+            me.myScroll.refresh();
+            me.loadingStep = 0;
+        }, 500);//500毫秒
     }
 
     this.loaded = function (tabContentTag) {
+
+     
+
         this.pullDownEl = $(tabContentTag + ' .pullDown');
         this.pullDownL = this.pullDownEl.find('.pullDownLabel');
         this.pullDownEl['class'] = this.pullDownEl.attr('class');
@@ -74,12 +78,12 @@ function PullToRefreshMultiTab(tabContentTag) {
             momentum: true // 允许有惯性滑动  
         });
         //滚动时  
-        this.myScroll.on('scroll', function (me) {
+        this.myScroll.on('scroll', function () {
             console.info("scroll event. this.y: " + this.y);
             if (me.loadingStep == 0 &&
                 !me.pullDownEl.attr('class').match('flip|loading') &&
                 !me.pullUpEl.attr('class').match('flip|loading')) {
-                if (arguments.callee.y > 5) {
+                if (this.y > 5) {
                     //下拉刷新效果  
                     me.pullDownEl.attr('class', me.pullUpEl['class'])
                     me.pullDownEl.show();
@@ -97,9 +101,9 @@ function PullToRefreshMultiTab(tabContentTag) {
                     me.loadingStep = 1;
                 }
             }
-        }(this));
+        });
         //滚动完毕  
-        this.myScroll.on('scrollEnd', function (me) {
+        this.myScroll.on('scrollEnd', function () {
             console.info("scroll end event.");
             if (me.loadingStep == 1) {
                 if (me.pullUpEl.attr('class').match('flip|loading')) {
@@ -114,7 +118,7 @@ function PullToRefreshMultiTab(tabContentTag) {
                     me.pullDownAction(tabContentTag);
                 }
             }
-        }(this));
+        });
     }
 
     this.loaded(tabContentTag);

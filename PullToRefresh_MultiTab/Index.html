@@ -22,11 +22,13 @@
             function () {
                 bindTabEvents();
 
-                // var obj1 = new PullToRefreshMultiTab("#newWorksTab");
-                // //PullToRefreshMultiTab.loaded("#newWorksTab");
-                // var obj2 = new PullToRefreshMultiTab("#hotWorksTab");
-                // //PullToRefreshMultiTab.loaded("#hotWorksTab");
-                // var obj3 = new PullToRefreshMultiTab("#myStudioTab");
+                $("#hotWorks").click();
+
+                var obj1 = new PullToRefreshMultiTab("#newWorksTab");
+                //PullToRefreshMultiTab.loaded("#newWorksTab");
+                var obj2 = new PullToRefreshMultiTab("#hotWorksTab");
+                //PullToRefreshMultiTab.loaded("#hotWorksTab");
+                var obj3 = new PullToRefreshMultiTab("#myStudioTab");
                 //PullToRefreshMultiTab.loaded("#myStudioTab");
             }
         );
