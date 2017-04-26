@@ -51,6 +51,7 @@
     height: 100%;
     box-sizing: border-box;
     background-color: #fff;
-    overflow-y: scroll;
+    /*use iScroll to scroll*/
+    overflow-y: hidden;
     overflow-x: hidden;
 }
