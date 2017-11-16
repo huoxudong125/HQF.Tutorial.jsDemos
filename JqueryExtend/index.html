@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="../lib/jquery/3.2.0/jquery.js"></script>
+    <script type="text/javascript" src="jqueryExtend.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="mySelect">
+        <option value="value1-1">value1</option>
+        <option value="value1-2">value2</option>
+        <option value="value1-3">value3</option>
+    </select>
+
+
+</body>
+
+<script>
+    $(document).ready(function () {
+
+        $("#mySelect").off("change").on("change", function () {
+
+            var selectedValue = this.value;
+
+            var span = $("<div>").text(selectedValue)
+
+            $("body").append(span);
+
+            var selectedValue2 = $("#mySelect").getSelectedValue();
+            console.log(selectedValue2);
+
+
+            var selectedText = $("#mySelect").getSelectedText();
+            console.info(selectedText);
+        });
+    });
+</script>
+
+</html>
