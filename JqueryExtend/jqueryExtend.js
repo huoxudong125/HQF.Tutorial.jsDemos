@@ -1,7 +1,8 @@
 jQuery.fn.extend({
 
     getSelectedValue: function () {
-       var result= this.find("option:selected").val();
+    //    var result= this.find("option:selected").val();
+       var result= this.val();
        return result;
     },
 
@@ -12,3 +13,7 @@ jQuery.fn.extend({
 
 
 });
+
+
+
+
