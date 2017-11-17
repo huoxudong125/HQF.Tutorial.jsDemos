@@ -18,6 +18,7 @@
     </select>
 
 
+    <button id="btnReset">Reset</button>
 </body>
 
 <script>
@@ -37,6 +38,14 @@
 
             var selectedText = $("#mySelect").getSelectedText();
             console.info(selectedText);
+
+            
+        });
+
+
+        $("#btnReset").off("click").on("click",function(){
+            $("#mySelect").val("value1-1");
+            $("#mySelect").triggerChange();
         });
     });
 </script>
